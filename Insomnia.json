@@ -1,0 +1,176 @@
+{
+  "_type": "export",
+  "__export_format": 4,
+  "__export_date": "2025-06-15T00:00:00.000Z",
+  "__export_source": "insomnia.desktop.app",
+  "resources": [
+    {
+      "_id": "req_auth_login",
+      "parentId": "wrk_1",
+      "name": "Login",
+      "description": "Obtener JWT token",
+      "method": "POST",
+      "url": "http://localhost:8080/auth/login",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"email\": \"admin@example.com\",\n  \"password\": \"adminpassword\"\n}"
+      },
+      "authentication": {},
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "isPrivate": false,
+      "_type": "request"
+    },
+    {
+      "_id": "req_get_categorias",
+      "parentId": "wrk_1",
+      "name": "Listar Categorías",
+      "method": "GET",
+      "url": "http://localhost:8080/categorias",
+      "authentication": {
+        "type": "bearer",
+        "token": ""
+      },
+      "headers": [],
+      "_type": "request"
+    },
+    {
+      "_id": "req_create_categoria",
+      "parentId": "wrk_1",
+      "name": "Crear Categoría",
+      "method": "POST",
+      "url": "http://localhost:8080/categorias",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"nombre\": \"Electrónica\",\n  \"descripcion\": \"Categoría para productos electrónicos\"\n}"
+      },
+      "authentication": {
+        "type": "bearer",
+        "token": ""
+      },
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "_type": "request"
+    },
+    {
+      "_id": "req_update_categoria",
+      "parentId": "wrk_1",
+      "name": "Actualizar Categoría",
+      "method": "PUT",
+      "url": "http://localhost:8080/categorias/1",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"nombre\": \"Electrónica y Gadgets\",\n  \"descripcion\": \"Categoría actualizada de productos electrónicos\"\n}"
+      },
+      "authentication": {
+        "type": "bearer",
+        "token": ""
+      },
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "_type": "request"
+    },
+    {
+      "_id": "req_delete_categoria",
+      "parentId": "wrk_1",
+      "name": "Eliminar Categoría",
+      "method": "DELETE",
+      "url": "http://localhost:8080/categorias/1",
+      "authentication": {
+        "type": "bearer",
+        "token": ""
+      },
+      "headers": [],
+      "_type": "request"
+    },
+    {
+      "_id": "req_get_productos",
+      "parentId": "wrk_1",
+      "name": "Listar Productos",
+      "method": "GET",
+      "url": "http://localhost:8080/productos",
+      "authentication": {
+        "type": "bearer",
+        "token": ""
+      },
+      "headers": [],
+      "_type": "request"
+    },
+    {
+      "_id": "req_create_producto",
+      "parentId": "wrk_1",
+      "name": "Crear Producto",
+      "method": "POST",
+      "url": "http://localhost:8080/productos",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"nombre\": \"Smartphone XYZ\",\n  \"descripcion\": \"Último modelo de smartphone\",\n  \"precio\": 499.99,\n  \"cantidadStock\": 50,\n  \"categoria\": { \"id\": 1 }\n}"
+      },
+      "authentication": {
+        "type": "bearer",
+        "token": ""
+      },
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "_type": "request"
+    },
+    {
+      "_id": "req_update_producto",
+      "parentId": "wrk_1",
+      "name": "Actualizar Producto",
+      "method": "PUT",
+      "url": "http://localhost:8080/productos/1",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"nombre\": \"Smartphone XYZ Pro\",\n  \"descripcion\": \"Modelo mejorado con más características\",\n  \"precio\": 599.99,\n  \"cantidadStock\": 40,\n  \"categoria\": { \"id\": 1 }\n}"
+      },
+      "authentication": {
+        "type": "bearer",
+        "token": ""
+      },
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "_type": "request"
+    },
+    {
+      "_id": "req_delete_producto",
+      "parentId": "wrk_1",
+      "name": "Eliminar Producto",
+      "method": "DELETE",
+      "url": "http://localhost:8080/productos/1",
+      "authentication": {
+        "type": "bearer",
+        "token": ""
+      },
+      "headers": [],
+      "_type": "request"
+    },
+    {
+      "_id": "wrk_1",
+      "_type": "workspace",
+      "name": "Demo API",
+      "description": "Colección para probar CRUD Producto y Categoría con JWT",
+      "scope": "collection"
+    }
+  ]
+}
